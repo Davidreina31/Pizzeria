@@ -1,0 +1,48 @@
+﻿@model Data.Client
+
+
+<h3>Donnés du client :</h3>
+<pre>
+@Model.LastName @Model.FirstName
+@Model.Adresse
+Commande faite le : @Model.DateEtHeure
+</pre>
+
+
+<h3>Pizzas :</h3>
+@foreach (var item in Model.PizzaId)
+{
+    switch (item)
+    {
+        case 1:<li>Margherita</li>;
+            break;
+        case 2: <li>Pepperoni</li>;
+            break;
+        case 3: <li>Roma</li>;
+            break;
+        case 4: <li>Napoli</li>;
+            break;
+        case 5: <li>Prosciutto</li>;
+            break;
+        case 6: <li>Végétarienne</li>;
+            break;
+        case 7: <li>Calzone</li>;
+            break;
+        case 8: <li>Quatre fromages</li>;
+            break;
+        case 9: <li>Hawaï</li>;
+            break;
+        case 10: <li>Bolognaise</li>;
+            break;
+        case 11: <li>Sicilienne</li>;
+            break;
+    }
+
+}
+
+
+
+
+<h3>Commantaires :</h3>
+<h5 style="color:red"> @Model.Coment</h5>
+

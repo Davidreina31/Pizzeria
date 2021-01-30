@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Data.Models.Retour>
+
+    <h2 style="color:green">N'hésite pas à ajouter un avis &#128521</h2>
+<p>
+    <a asp-action="Create">Ajouter un avis</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Avis)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Avis)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

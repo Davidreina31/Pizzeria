@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Data.Client>
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                Nom complet
+            </th>
+            <th>
+                Date et heure
+            </th>
+            <th>
+                Adresse
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            
+        <tr>
+
+            <td>
+                @item.LastName @item.FirstName
+            </td>
+
+            <td>
+                @item.Adresse
+            </td>
+            <td>
+                @item.DateEtHeure
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.ClientId })
+            </td>
+        </tr>
+            
+            
+        }
+    </tbody>
+</table>

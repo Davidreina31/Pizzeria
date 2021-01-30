@@ -1,0 +1,80 @@
+﻿@model Data.Form.ClientForm
+
+    <h2 style="color: red">Il est temps de commander &#128523</h2>
+
+<form asp-action="Create" enctype="multipart/form-data" method="post">
+
+    <div class="form-group">
+        *Nom : <input asp-for="LastName" class="form-control " type="text" />
+        <span asp-validation-for="LastName"></span>
+    </div>
+
+    <div class="form-group">
+        *Prénom : <input asp-for="FirstName" class="form-control" type="text" />
+        <span asp-validation-for="FirstName"></span>
+
+    </div>
+
+    <div class="form-group">
+        *E-mail :  <input asp-for="Email" class="form-control" type="email" />
+        <span asp-validation-for="Email"></span>
+
+    </div>
+
+    <div class="form-group">
+        *Adresse :  <input asp-for="Adresse" class="form-control" type="text" />
+        <span asp-validation-for="Adresse"></span>
+
+    </div>
+
+    @*<div class="form-group">
+            @Html.LabelFor(Model => Model.PizzaId)
+            @Html.DropDownListFor(Model => Model.PizzaId, Model.listePizza, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(Model => Model.PizzaId)
+            @Html.DropDownListFor(Model => Model.PizzaId, Model.listePizza, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(Model => Model.PizzaId)
+            @Html.DropDownListFor(Model => Model.PizzaId, Model.listePizza, new { @class = "form-control" })
+        </div>*@
+
+    <p>*Veuillez choisir votre/vos pizza(s) :</p>
+
+    @for (int i = 0; i < 8; i++)
+    {
+        <div class="form-group">
+
+
+            <select asp-for="PizzaId">
+                <option value="0">---------</option>
+                <option value="1">Margherita</option>
+                <option value="2">Pepperoni</option>
+                <option value="3">Roma</option>
+                <option value="4">Napoli</option>
+                <option value="5">Prosciutto</option>
+                <option value="6">Végétarienne</option>
+                <option value="7">Calzone</option>
+                <option value="8">Quatre fromages</option>
+                <option value="9">Hawaï</option>
+                <option value="10">Bolognaise</option>
+                <option value="11">Sicilienne</option>
+            </select>
+
+            <span asp-validation-for="PizzaId"></span>
+
+        </div>
+    }
+
+
+    <div class="form-group">
+        Commentaires :  <textarea asp-for="Coment" class="form-control" type="text"></textarea>
+        <span asp-validation-for="Coment"></span>
+
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="sauvegarder" />
+    </div>
+</form>
